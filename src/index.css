@@ -1,0 +1,289 @@
+*,*::before, *::after{
+  box-sizing: border-box;
+}
+
+:root{
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --light-gray: #f3f4f6;
+  --gray: #d1d5db;
+  --dark: #1f2937;
+}
+body{
+  margin: 0;
+  background-color: var(--light-gray);
+  color: var(--dark);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+} 
+
+header {
+  background-color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  color: var(--dark);
+  text-align: center;
+}
+.tabs{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.tab_links{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 300px;
+}
+
+.tab_link{
+  padding: 0.5rem 1rem;
+  color: var(--dark);
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+  font-weight: 550;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  position: relative;
+}
+
+.tab_link:hover{
+  background-color: var(--light-gray);
+} 
+
+.tab_link--active{
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.tab_link--active::after{
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+
+        
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  color: var(--dark);
+  font-size: 1.25rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+input {
+  padding: 0.75rem;
+  border: 1px solid var(--gray);
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: 2px solid var(--primary);
+  border-color: transparent;
+}
+
+button {
+  padding: 0.75rem 1rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+
+/* Contact Page styles */
+
+
+        
+.card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+    color: var(--dark);
+    font-size: 1.25rem;
+}
+
+.search-bar {
+    margin-bottom: 1.5rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--gray);
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+.search-input:focus {
+    outline: 2px solid var(--primary);
+    border-color: transparent;
+}
+
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid var(--gray);
+    border-radius: 0.5rem;
+    background-color: white;
+    margin: 2em 0;
+}
+
+.contact-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.contact-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.contact-phone {
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+}
+
+.phone-icon {
+    margin-right: 0.5rem;
+    color: #6b7280;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.view-btn {
+    padding: 0.5rem 0.75rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.view-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.delete-btn {
+    padding: 0.5rem 0.75rem;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #dc2626;
+}
+
+
+@media (max-width: 640px) {
+  .contact-item {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  .contact-avatar {
+      margin-bottom: 0.5rem;
+  }
+  
+  .action-buttons {
+      align-self: flex-end;
+      margin-top: 1rem;
+  }
+}
