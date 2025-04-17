@@ -1,6 +1,9 @@
 import Tablink from "./Tablink"
-
-const Tablinks = (props: {activeIndex: number, onActive : (arg: number) => void}) => {  
+interface TabProps  {
+    activeIndex: number
+    onActive: (arg: number) => void
+}
+const Tablinks = (props: TabProps) => {  
     return (
         <div className="tabs">
             <div className="tab_links">
