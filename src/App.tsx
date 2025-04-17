@@ -30,7 +30,7 @@ function App() {
   }, [contacts]);
 
 
-
+   
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>  ) => {
     e.preventDefault();
     setContacts([...contacts, {id: nextId++, name: name, phone: phone}]);
