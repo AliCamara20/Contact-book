@@ -208,13 +208,26 @@ button:hover {
 }
 
 .contact-avatar {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 1rem;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
 }
 
+.skeleton{
+  animation: skeleton-loading 1.2s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0%{
+    background-color: darkgray;
+  }
+
+  100%{
+    background-color: lightgray;
+  }
+}
 .contact-info {
     display: flex;
     flex-direction: column;

@@ -5,7 +5,7 @@ import { Contact } from './data';
 const ContactCard = (props:Contact ) => {
     return (
         <div className="contact-item">
-                    <img src={user_avatar} alt="Sarah Johnson" className="contact-avatar" />
+                    <img src={user_avatar} alt="Sarah Johnson" className="contact-avatar skeleton" />
                     
                     <div className="contact-info">
                         <div className="contact-name">{props.name}</div>

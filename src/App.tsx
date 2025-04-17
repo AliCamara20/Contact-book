@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { useMemo, useState } from "react"
 import Header from "./Header"
 import Tablinks from "./Tablinks"
 import AddContactPage from "./AddContactPage";
