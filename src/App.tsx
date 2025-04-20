@@ -4,7 +4,7 @@ import Tablinks from "./Tablinks.tsx"
 import AddContactPage from "./AddContactPage.tsx";
 import ViewContactPage from "./ViewContactPage.tsx";
 import ContactForm from "./ContactForm";
-import { contacts as initialContacts, Contact, filterContacts } from "./data.ts";
+import { contacts as initialContacts, filterContacts } from "./data.ts";
 import ContactsPage from "./Contacts.tsx";
 import ContactInfo from "./ContactInfo.tsx";
 import EditForm from "./EditForm.tsx";

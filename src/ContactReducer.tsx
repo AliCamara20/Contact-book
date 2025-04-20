@@ -7,17 +7,19 @@ interface Action{
 }
  export const contactReducer = (state: Contact[], action: Action): Contact[] => {
     switch(action.type){
-        case 'add': 
-          if(state.length === 0)  return [...state, {id: action.id!, name: action.name!,phone: action.phone!}];
+        case 'add':{ 
+          if(state.length === 0) {
+              return [...state, {id: action.id!, name: action.name!, phone: action.phone!}];
+          }
 
-          state.map(s => {
-            if(s.phone === action.phone){
-                alert('contact already exists');
-                return;
-            }
-            else  return [...state, {id: action.id!, name: action.name!,phone: action.phone!}];
-          })
+          const contactExists = state.some(s => s.phone === action.phone);
+          if(contactExists) {
+            alert('contact already exists');
+            return state;
+          }
 
+          return [...state, {id: action.id!, name: action.name!, phone: action.phone!}];
+        }
         case 'edit':
             return state.map( s => {
                 if(s.id === action.id) return {...s, name: action.name!, phone: action.phone!}
