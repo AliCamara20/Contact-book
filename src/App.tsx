@@ -71,13 +71,7 @@ function App() {
 
   const handleEditContact = () => {
     setEditStatus('editing');
-    
-    
   }
-
-
-
-  
 
   const handleNameChange = (e: InputChange) => {
     setName(e.target.value);
