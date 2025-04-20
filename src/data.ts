@@ -3,6 +3,7 @@ export interface Contact{
     name: string;
     phone: string;
     onDelete?: (id: number) => void;
+    onSelect?: (id: number) => void
 }
 
 export const contacts: Contact[] = [

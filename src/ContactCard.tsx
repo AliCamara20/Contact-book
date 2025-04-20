@@ -18,7 +18,7 @@ const ContactCard = (props:Contact ) => {
                         </div>
                     </div>
                     <div className="action-buttons">
-                        <button className="view-btn">View</button>
+                        <button className="view-btn" onClick={() => props.onSelect!(props.id)}>View</button>
                         <button className="delete-btn" onClick={() => props.onDelete!(props.id)}  >Delete</button>
                     </div>
                 </div>

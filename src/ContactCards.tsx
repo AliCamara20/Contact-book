@@ -1,6 +1,6 @@
 import { Contact } from "./data";
 import ContactCard from "./ContactCard";
-const ContactCards = (props:{ contact: Contact[], onDelete: (id: number) => void} ) => {
+const ContactCards = (props:{ contact: Contact[], onDelete: (id: number) => void, onSelect: (id: number) => void} ) => {
 
   return (
     <div className="contact-list">
@@ -11,6 +11,7 @@ const ContactCards = (props:{ contact: Contact[], onDelete: (id: number) => void
           name={contact.name}
           phone={contact.phone}
           onDelete={() => props.onDelete(contact.id)}
+          onSelect={() => props.onSelect(contact.id)}
           
           
         />))}
