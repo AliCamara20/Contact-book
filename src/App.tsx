@@ -69,7 +69,7 @@ function App() {
     
   }
 
-  const handleEditContact = (id: number) => {
+  const handleEditContact = () => {
     setEditStatus('editing');
     
     
