@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useMemo, useReducer, useState } from "react"
 import Header from "./Header.tsx"
 import Tablinks from "./Tablinks.tsx"
 import AddContactPage from "./AddContactPage.tsx";
@@ -8,6 +8,7 @@ import { contacts as initialContacts, Contact, filterContacts } from "./data.ts"
 import ContactsPage from "./Contacts.tsx";
 import ContactInfo from "./ContactInfo.tsx";
 import EditForm from "./EditForm.tsx";
+import { contactReducer } from "./ContactReducer.tsx";
 export type InputChange = React.ChangeEvent<HTMLInputElement>;
 
 
@@ -16,11 +17,15 @@ if(!localStorage.getItem("contact book")){
 }
 
 function App() {
-  
-  const [contacts, setContacts] = useState<Contact[]>(() => {
+
+  const storedContacts = () => {
     const contacts = localStorage.getItem('contact book');
-    return contacts ? JSON.parse(contacts) : [];
-  });
+    return contacts ?  JSON.parse(contacts) : [];
+  }
+  
+  const [contacts, dispatch] = useReducer(contactReducer, storedContacts());
+
+  /* */
 
   const[selectedContactId, setSelectedContactId] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -32,7 +37,7 @@ function App() {
   const [query, setQuery] = useState("");
   const [showUserPage, setShowUserPage] = useState(false);
   const [editStatus, setEditStatus] = useState<string | null>(null);
-  const selectedContact = contacts.find( contact => contact.id === selectedContactId)
+  const selectedContact = contacts.find( contact => contact.id === selectedContactId);
   let nextId = 7;
   let result = filterContacts(contacts, query);
   
@@ -40,16 +45,24 @@ function App() {
     localStorage.setItem('contact book', JSON.stringify(contacts))
   }, [contacts]);
   
+  
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>  ) => {
     e.preventDefault();
-    setContacts([...contacts, {id: nextId++, name: name, phone: phone}]);
+    
+    dispatch({
+      type: 'add',
+      id: nextId ++,
+      name: name,
+      phone: phone
+     })
      setSuccess(true);
-    setTimeout(() => {
+     setTimeout(() => {
       setSuccess(false);
       setName("");
       setPhone("");
     }
     , 2000);
+     
   };
 
 
@@ -58,14 +71,13 @@ function App() {
     setEditStatus('edited');
     console.log("new name: " + editedName);
     console.log("new number: " + editedPhone);
-
-    setContacts(contacts.map( c => {
-      if(c.id === selectedContactId){
-        
-        return {...c, name: editedName, phone: editedPhone}
-      }
-      else return c
-    }))
+     
+    dispatch({
+      type: 'edit',
+      id: selectedContactId,
+      name: editedName,
+      phone: editedPhone
+    })
     
   }
 
@@ -85,9 +97,15 @@ function App() {
   }
 
   const handleDelete = (id: number) => {
-    setContacts(contacts.filter(contact => contact.id !== id));
-    setShowUserPage(false);
+    
+   dispatch({
+    type: 'delete',
+    id: id
+   })
+
+   console.log('deleted contact ID: ' +  id);
   }
+  console.log(contacts);
 
   const handleSelectContact = (id: number) => {
     setSelectedContactId(id);
