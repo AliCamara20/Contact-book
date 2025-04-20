@@ -1,13 +1,13 @@
 import { useMemo, useState } from "react"
-import Header from "./Header"
-import Tablinks from "./Tablinks"
-import AddContactPage from "./AddContactPage";
-import ViewContactPage from "./ViewContactPage";
+import Header from "./Header.tsx"
+import Tablinks from "./Tablinks.tsx"
+import AddContactPage from "./AddContactPage.tsx";
+import ViewContactPage from "./ViewContactPage.tsx";
 import ContactForm from "./ContactForm";
-import { contacts as initialContacts, Contact, filterContacts } from "./data";
-import ContactsPage from "./Contacts";
-import ContactInfo from "./ContactInfo";
-import EditForm from "./EditForm";
+import { contacts as initialContacts, Contact, filterContacts } from "./data.ts";
+import ContactsPage from "./Contacts.tsx";
+import ContactInfo from "./ContactInfo.tsx";
+import EditForm from "./EditForm.tsx";
 export type InputChange = React.ChangeEvent<HTMLInputElement>;
 
 

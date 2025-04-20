@@ -1,5 +1,5 @@
 import contact_avatar from './assets/avatar.png'
-import { Contact } from './data'
+import { Contact } from './data.ts'
 const ContactInfo = (props:{contact: Contact, onEdit: () => void,  onShow:() => void, onDelete: (id: number) => void} ) => {
        return(
         <main className="container">

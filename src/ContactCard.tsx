@@ -1,5 +1,5 @@
 import user_avatar from './assets/avatar.png';
-import { Contact } from './data';
+import { Contact } from './data.ts';
 
 
 const ContactCard = (props:Contact ) => {

@@ -1,4 +1,4 @@
-import Tablink from "./Tablink"
+import Tablink from "./Tablink.tsx"
 interface TabProps  {
     activeIndex: number
     onActive: (arg: number) => void

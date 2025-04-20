@@ -1,5 +1,5 @@
-import { Contact } from "./data";
-import ContactCard from "./ContactCard";
+import { Contact } from "./data.ts";
+import ContactCard from "./ContactCard.tsx";
 const ContactCards = (props:{ contact: Contact[], onDelete: (id: number) => void, onSelect: (id: number) => void} ) => {
 
   return (

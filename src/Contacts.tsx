@@ -1,6 +1,6 @@
-import ContactCards from "./ContactCards";
-import SearchBar from "./SearchBar";
-import { Contact } from "./data";
+import ContactCards from "./ContactCards.tsx";
+import SearchBar from "./SearchBar.tsx";
+import { Contact } from "./data.ts";
 
 
 const ContactsPage = (props: {query: string, onQuery : (e: React.ChangeEvent<HTMLInputElement>) => void, contacts: Contact[], onDelete: (id: number) => void, onSelect: (id: number) => void} ) => {    

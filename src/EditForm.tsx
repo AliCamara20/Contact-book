@@ -1,5 +1,5 @@
 import React from "react"
-import { InputChange } from "./App"
+import { InputChange } from "./App.tsx"
 interface EditFormProps{
     name?: string,
     phone?: string,
